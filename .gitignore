@@ -1,0 +1,6 @@
+logs/*
+.snakemake
+out/*
+*.pdf
+*.log
+sandbox/*
