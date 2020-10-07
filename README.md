@@ -1,7 +1,7 @@
 # A Reproducible Workflow for Economics Research Using Snakemake and Python
 
-[![Build Status](https://travis-ci.org/lachlandeer/snakemake-econ-r.svg?branch=master)](https://travis-ci.org/lachlandeer/snakemake-econ-python)
-[![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![Build Status](https://travis-ci.org/lachlandeer/snakemake-econ-python.svg?branch=master)](https://travis-ci.org/lachlandeer/snakemake-econ-python)
+[![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![lifecycle](https://img.shields.io/badge/version-0.0.1-red.svg)]()
 
 ## Introduction
