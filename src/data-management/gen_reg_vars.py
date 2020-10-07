@@ -50,7 +50,6 @@ if __name__ == "__main__":
     # Logging info
     fname = Path(__file__).resolve().stem
     dname = Path(__file__).parent.name
-    print(dname)
     logfile = Path.cwd() / 'logs' / dname / (fname + '.txt')
     ## Create a custom logger
     logger = logging.getLogger(__name__)
