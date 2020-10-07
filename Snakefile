@@ -24,8 +24,9 @@ TABLES = glob_wildcards(config["src_table_specs"] + "{fname}.py").fname
 ## all            : build paper and slides that are the core of the project
 rule all:
     input:
-        paper_pdf     = PROJ_NAME + ".pdf",
-        beamer_slides = PROJ_NAME + "_slides.pdf"
+        #paper_pdf     = PROJ_NAME + ".pdf",
+        #beamer_slides = PROJ_NAME + "_slides.pdf",
+        config["out_data"] + "mrw_renamed.csv"
 
 # --- Cleaning Rules --- #
 ## clean_all      : delete all output and log files for this project
