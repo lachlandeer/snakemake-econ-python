@@ -53,7 +53,7 @@ if __name__ == "__main__":
                         )
     parser.add_argument("-s", 
                         "--subset",
-                        help = "a file name containing a regression model"
+                        help = "a file name containing a subset condition"
                         )
     parser.add_argument("-o", 
                         "--out",
