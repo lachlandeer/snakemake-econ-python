@@ -24,13 +24,13 @@ TABLES = glob_wildcards(config["src_table_specs"] + "{fname}.py").fname
 ## all            : build paper and slides that are the core of the project
 rule all:
     input:
-        #paper_pdf     = PROJ_NAME + ".pdf",
+        paper_pdf     = PROJ_NAME + ".pdf",
         #beamer_slides = PROJ_NAME + "_slides.pdf",
-        expand(config["out_analysis"] +
+        ols = expand(config["out_analysis"] +
                             "{iModel}_ols_{iSubset}.pickle",
                             iModel = MODELS,
                             iSubset = DATA_SUBSET),
-        expand(config["out_figures"] + "{iFigure}.pdf",
+        figs = expand(config["out_figures"] + "{iFigure}.pdf",
                 iFigure = PLOTS)
 
 # --- Cleaning Rules --- #

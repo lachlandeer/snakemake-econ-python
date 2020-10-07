@@ -1,0 +1,116 @@
+% !TeX program = pdfLaTeX
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{graphicx,psfrag,epsf}
+\usepackage{enumerate}
+\usepackage{natbib}
+\usepackage{textcomp}
+\usepackage[hyphens]{url} % not crucial - just used below for the URL
+\usepackage{hyperref}
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% Our (DLB) extra packages
+\usepackage{dcolumn}
+\usepackage{rotating}
+\usepackage{subcaption}
+\usepackage{mwe} % might need to install with tlmgr
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{setspace} % adjust line space on the fly
+\usepackage{threeparttable} % for table notes, might need to install with tlmgr
+\usepackage{booktabs} % To thicken table lines
+\usepackage{multirow} % one table element over multiple row, might need to install with tlmgr
+
+\makeatletter
+\def\thm@space@setup{%
+  \thm@preskip=8pt plus 2pt minus 4pt
+  \thm@postskip=\thm@preskip
+}
+\makeatother
+
+% figure note environment
+\newenvironment{fignote}{\begin{quote}\footnotesize}{\end{quote}}
+
+%\pdfminorversion=4
+% NOTE: To produce blinded version, replace "0" with "1" below.
+\newcommand{\blind}{$blinded$}
+
+% DON'T change margins - should be 1 inch all around.
+\addtolength{\oddsidemargin}{-.5in}%
+\addtolength{\evensidemargin}{-.5in}%
+\addtolength{\textwidth}{1in}%
+\addtolength{\textheight}{1.3in}%
+\addtolength{\topmargin}{-.8in}%
+
+%% load any required packages here
+$preamble$
+
+$if(highlighting-macros)$
+$highlighting-macros$
+$endif$
+
+$if(csl-refs)$
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newenvironment{cslreferences}%
+  {$if(csl-hanging-indent)$\setlength{\parindent}{0pt}%
+  \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces$endif$}%
+  {\par}
+$endif$
+
+$for(header-includes)$
+$header-includes$
+$endfor$
+
+\begin{document}
+
+
+\def\spacingset#1{\renewcommand{\baselinestretch}%
+{#1}\small\normalsize} \spacingset{1}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\if0\blind
+{
+  \title{\bf $title$}
+
+  \author{
+    $for(authors)$
+    $authors.name$ $if(authors.thanks)$\thanks{$authors.thanks$} $endif$\\
+    $authors.affiliation$\\
+    $sep$ and \\ $endfor$
+  }
+  \maketitle
+} \fi
+
+\if1\blind
+{
+  \bigskip
+  \bigskip
+  \bigskip
+  \begin{center}
+    {\LARGE\bf $title$}
+  \end{center}
+  \medskip
+} \fi
+
+\bigskip
+\begin{abstract}
+$abstract$
+\end{abstract}
+
+\noindent%
+{\it Keywords:} $for(keywords)$$keywords$$sep$, $endfor$
+\vfill
+
+\newpage
+\spacingset{1.45} % DON'T change the spacing!
+
+$body$
+
+\bibliographystyle{agsm}
+\bibliography{$for(bibliography)$$bibliography$$sep$,$endfor$}
+
+\end{document}
