@@ -26,7 +26,10 @@ rule all:
     input:
         #paper_pdf     = PROJ_NAME + ".pdf",
         #beamer_slides = PROJ_NAME + "_slides.pdf",
-        data = config["out_data"] + "mrw_complete.csv"
+        expand(config["out_analysis"] +
+                            "{iModel}_ols_{iSubset}.pickle",
+                            iModel = MODELS,
+                            iSubset = DATA_SUBSET)
 
 # --- Cleaning Rules --- #
 ## clean_all      : delete all output and log files for this project
