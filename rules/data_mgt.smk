@@ -26,6 +26,6 @@ rule rename_vars:
     output:
         data = config["out_data"] + "mrw_renamed.csv",
     log:
-        config["log"] + "rename_variables.txt"
+        config["log"] + "data-management/rename_variables.txt"
     shell:
         "python {input.script} --data {input.data} --out {output.data}"

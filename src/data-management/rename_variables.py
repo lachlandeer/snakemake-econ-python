@@ -45,8 +45,10 @@ if __name__ == "__main__":
     args = parser.parse_args()
     
     # Logging info
-    print(Path(__file__).resolve().stem)
-    logfile = Path.cwd() / 'logs' / (Path(__file__).resolve().stem + '.txt')
+    fname = Path(__file__).resolve().stem
+    dname = Path(__file__).parent.name
+    print(dname)
+    logfile = Path.cwd() / 'logs' / dname / (fname + '.txt')
     ## Create a custom logger
     logger = logging.getLogger(__name__)
     ## Configure Logging
