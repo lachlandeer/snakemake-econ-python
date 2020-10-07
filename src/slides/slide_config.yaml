@@ -1,0 +1,30 @@
+---
+title:  "Reproducible Workflows with Snakemake and Python"
+subtitle: "Replicating Mankiw Romer Weil"
+shorttitle: "Replicating Mankiw Romer Weil"
+author:
+- name: Lachlan Deer
+  short: Deer
+  institute: 1
+  speaker: true
+- name: Julian Langer
+  short: Langer
+  institute: 2
+- name: Ulrich Bergmann
+  short: Bergmann
+  institute: 3
+institute:
+- name: Chicago Booth
+  short: Booth
+  id: 1
+- name: Harvard Law School
+  short: Harvard
+  id: 2
+- name: University of Zurich
+  short: Zurich
+  id: 3
+useshortauthors: true
+toc: false
+date: Fall 2020
+section-titles: false
+...

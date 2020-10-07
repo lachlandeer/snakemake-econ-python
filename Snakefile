@@ -25,7 +25,7 @@ TABLES = glob_wildcards(config["src_table_specs"] + "{fname}.py").fname
 rule all:
     input:
         paper_pdf     = PROJ_NAME + ".pdf",
-        #beamer_slides = PROJ_NAME + "_slides.pdf",
+        beamer_slides = PROJ_NAME + "_slides.pdf",
         ols = expand(config["out_analysis"] +
                             "{iModel}_ols_{iSubset}.pickle",
                             iModel = MODELS,

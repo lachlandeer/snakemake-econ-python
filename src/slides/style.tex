@@ -1,0 +1,34 @@
+%-----------------------------
+
+% Couleur
+% -------
+%\usetheme{LagonBleu}
+
+% some packages
+
+\usepackage{etoolbox}
+\newtoggle{hidepagenumber}
+\togglefalse{hidepagenumber}
+
+
+\usepackage{xspace}
+
+\usepackage{bbding}
+%\usepackage{wasysym}
+
+\usepackage{ifthen}
+% Our (DLB) extra packages
+\usepackage{dcolumn}
+\usepackage{rotating}
+\usepackage{subcaption}
+\usepackage{mwe} % might need to install with tlmgr
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{setspace} % adjust line space on the fly
+\usepackage{threeparttable} % for table notes, might need to install with tlmgr
+\usepackage{booktabs} % To thicken table lines
+\usepackage{multirow} % one table element over multiple row, might need to install with tlmgr
+
+% figure note environment
+\newenvironment{fignote}{\begin{quote}\footnotesize}{\end{quote}}
+%-----------------------------
