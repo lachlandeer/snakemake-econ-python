@@ -25,7 +25,7 @@ def create_vars(df, delta_gamma = 0.05):
                 ln_school     = lambda x: np.log(x.school/100)
                 
                 )
-    return df
+    return df1
 
 if __name__ == "__main__":
     """ This is executed when run from the command line """
@@ -67,7 +67,6 @@ if __name__ == "__main__":
     mrw = read_mrw(args.data)
     logging.info('Creating Variables')
     mrw_clean = create_vars(mrw, params['DELTA_GAMMA'])
-
     # Save to csv
     logging.info('Saving data')
-    mrw.to_csv(args.out, index = False)
+    mrw_clean.to_csv(args.out, index = False)

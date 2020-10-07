@@ -15,7 +15,7 @@ def read_mrw(file_name):
 def rename_cols(df):
     """ Construct meaningful variable names  """
     df.rename(columns={
-                    "n"        : "nonoil", 
+                    "n"        : "non_oil", 
                     "o"        : "oecd",
                     "i"        : "intermediate",
                     "rgdpw60"  : "gdp_60",
