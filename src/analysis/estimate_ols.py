@@ -34,7 +34,7 @@ def create_reg_formula(formula_dict):
 def run_regression(formula_dict, df):
 
     reg_eq = create_reg_formula(formula_dict)
-    mod = smf.ols(formula = 'ln_gdp_85 ~ ln_inv_gdp + ln_ndg', data = df)
+    mod = smf.ols(formula = reg_eq, data = df)
     res = mod.fit()
 
     return res
@@ -68,7 +68,6 @@ if __name__ == "__main__":
     subset_name = Path(args.subset).resolve().stem
     model_name  = Path(args.model).resolve().stem
     logfile = Path.cwd() / 'logs' / dname / (model_name + '_' + fname + '_' + subset_name + '.txt')
-    print(Path(args.model).resolve().stem)
     ## Create a custom logger
     logger = logging.getLogger(__name__)
     ## Configure Logging
