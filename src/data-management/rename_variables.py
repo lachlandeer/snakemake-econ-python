@@ -46,7 +46,7 @@ if __name__ == "__main__":
     
     # Logging info
     print(Path(__file__).resolve().stem)
-    logfile = Path.cwd() / 'logs' / Path(__file__).resolve().stem
+    logfile = Path.cwd() / 'logs' / (Path(__file__).resolve().stem + '.txt')
     ## Create a custom logger
     logger = logging.getLogger(__name__)
     ## Configure Logging
