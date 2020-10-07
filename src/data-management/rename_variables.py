@@ -3,6 +3,8 @@ Adds meaningful variable names to the original MRW data set
 """
 
 import argparse
+import logging
+from pathlib import Path
 import pandas as pd
 
 def read_mrw(file_name):
@@ -42,9 +44,22 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
     
+    # Logging info
+    print(Path(__file__).resolve().stem)
+    logfile = Path.cwd() / 'logs' / Path(__file__).resolve().stem
+    ## Create a custom logger
+    logger = logging.getLogger(__name__)
+    ## Configure Logging
+    logging.basicConfig(filename = logfile,
+                        format = '%(asctime)s - %(message)s', 
+                        level  = logging.INFO)
+    
     # Do data cleaning
+    logging.info('Reading Stata data')
     mrw = read_mrw(args.data)
+    logging.info('Rename columns')
     mrw_clean = rename_cols(mrw)
 
     # Save to csv
+    logging.info('Saving data')
     mrw.to_csv(args.out, index = False)
