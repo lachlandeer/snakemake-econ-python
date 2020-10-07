@@ -29,7 +29,9 @@ rule all:
         expand(config["out_analysis"] +
                             "{iModel}_ols_{iSubset}.pickle",
                             iModel = MODELS,
-                            iSubset = DATA_SUBSET)
+                            iSubset = DATA_SUBSET),
+        expand(config["out_figures"] + "{iFigure}.pdf",
+                iFigure = PLOTS)
 
 # --- Cleaning Rules --- #
 ## clean_all      : delete all output and log files for this project
