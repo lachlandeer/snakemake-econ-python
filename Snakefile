@@ -26,7 +26,7 @@ rule all:
     input:
         #paper_pdf     = PROJ_NAME + ".pdf",
         #beamer_slides = PROJ_NAME + "_slides.pdf",
-        config["out_data"] + "mrw_renamed.csv"
+        data = config["out_data"] + "mrw_complete.csv"
 
 # --- Cleaning Rules --- #
 ## clean_all      : delete all output and log files for this project

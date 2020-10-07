@@ -12,11 +12,10 @@ rule gen_regression_vars:
     output:
         data = config["out_data"] + "mrw_complete.csv",
     log:
-        config["log"] + "data_cleaning/gen_reg_vars.txt"
+        config["log"] + "data-management/gen_reg_vars.txt"
     shell:
-        "{runR} {input.script} --data {input.data} --param {input.params} \
-            --out {output.data} \
-            > {log} {logAll}"
+        "python {input.script} --data {input.data} --param {input.params} \
+            --out {output.data}"
 
 ## rename_vars     : gives meaningful names to variables 
 rule rename_vars:
