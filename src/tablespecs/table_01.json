@@ -1,0 +1,20 @@
+{
+    "MODEL_PATH": "out/analysis/",
+    "MODELS": ["model_solow_ols_subset_nonoil.pickle",
+               "model_solow_ols_subset_intermediate.pickle",
+               "model_solow_ols_subset_oecd.pickle",
+               "model_solow_restr_ols_subset_nonoil.pickle",
+               "model_solow_restr_ols_subset_intermediate.pickle",
+               "model_solow_restr_ols_subset_oecd.pickle"
+            ],
+    "MODEL_NAMES": ["Non-Oil", "Intermediate", "OECD", "Non-Oil", "Intermediate", "OECD"],
+    "NAME_LENGTHS": [1,1,1,1,1,1],
+    "DEP_VAR": "log($GDP_{1985}$)",
+    "VAR_ORDER": ["ln_inv_gdp", "ln_ndg", "I(ln_inv_gdp - ln_ndg)"],
+    "VAR_NAMES": {"ln_inv_gdp": "log(I / GDP)",
+                  "ln_ndg"    : "log(n + g + $\\delta$)",
+                  "I(ln_inv_gdp - ln_ndg)": "log(I / GDP) - log(n + g + $\\delta$)"
+                  },
+    "RESTRICTIONS": ["No", "No", "No", "Yes", "Yes", "Yes"],
+    "RESTR_LOGICAL": "True"
+}
